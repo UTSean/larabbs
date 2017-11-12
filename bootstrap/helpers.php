@@ -1,4 +1,7 @@
 <?php
 
-require __DIR__ . '/helper.php';
- ?>
+function route_class()
+{
+    return str_replace('.', '-', Route::currentRouteName());
+}
+?>
