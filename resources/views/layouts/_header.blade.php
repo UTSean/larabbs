@@ -10,8 +10,8 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <!-- Branding Image-->
-            <a href="{{ url('/') }}" class="navbar-brand">
+            <!-- Branding Image -->
+            <a class="navbar-brand" href="{{ url('/') }}">
                 LaraBBS
             </a>
         </div>
