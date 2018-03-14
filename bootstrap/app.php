@@ -1,10 +1,5 @@
 <?php
-<<<<<<< HEAD
-=======
 
-require __DIR__ . '/helpers.php';
-
->>>>>>> 10868fe199fc9def80fa7b9517573b8265dbf231
 /*
 |--------------------------------------------------------------------------
 | Create The Application
@@ -58,3 +53,4 @@ $app->singleton(
 */
 
 return $app;
+?>
