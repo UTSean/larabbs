@@ -44,7 +44,14 @@
 
                     <ul class="dropdown-menu" role="menu">
                         <li>
+                            <a href="{{ route('users.show', Auth::id()) }}">
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                Personal center
+                            </a>
+                        </li>
+                        <li>
                             <a href="{{ route('users.edit', Auth::id() )}}">
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                                 Edit profile
                             </a>
                         </li>
@@ -52,6 +59,7 @@
                             <a href="{{ route('logout') }}"
                                 onclick="event.preventDefualt();
                                     document.getElementById('logout-form').submit();">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                                         logout
                             </a>
 

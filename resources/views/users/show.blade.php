@@ -38,10 +38,15 @@
         {{-- 用户发布的内容 --}}
         <div class="panel panel-default">
             <div class="panel-body">
-                暂无数据 ~_~
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#">Her/His topics</a>
+                    </li>
+                    <li><a herf="#">Her/His Reply</a></li>
+                </ul>
+                @include('users._topics', ['topics' => $user->topics()->recent()->paginate(5)])
             </div>
         </div>
-
     </div>
 </div>
 @stop
