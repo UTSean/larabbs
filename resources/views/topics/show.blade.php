@@ -47,7 +47,7 @@
                     <a href="{{ route('topics.edit', $topic->id) }}" class="btn btn-default btn-xs" role="button">
                         <i class="glyphicon glyphicon-edit"></i> Edit
                     </a>
-                    <a href="#" class="btn btn-default btn-xs" role="button">
+                    <a href="{{ route('topics.destroy', $topic->id) }}" class="btn btn-default btn-xs" role="button">
                         <i class="glyphicon glyphicon-trash"></i> Delete
                     </a>
                 </div>
