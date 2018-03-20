@@ -1,10 +1,17 @@
 @extends('layouts.app')
 
-@section('title', 'Topic list')
+@section('title', isset($category) ? $category->name : 'Topic list')
 
 @section('content')
 <div class="row">
     <div class="col-md-09 col-md-09 topic_list">
+
+        @if (isset($category))
+        <div class="alert alert-info" role="alert">
+            {{ $category->name }} : {{$category->description }}
+        </div>
+        @endif
+
         <div class="panel panel-default">
             <div class="panel-heading">
                 <ul class="nav nav-pills">
