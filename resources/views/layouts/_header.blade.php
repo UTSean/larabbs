@@ -34,6 +34,11 @@
                 <li><a href="{{ route('login') }}">Sign in</a></li>
                 <li><a href="{{ route('register') }}">Sign up</a></li>
                 @else
+                <li>
+                    <a href="{{ route('topics.create') }}">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    </a>
+                </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         <span class="user-avatar pull-left" style="margin-right:8px; margin-top:-5px;">
@@ -51,7 +56,7 @@
                         </li>
                         <li>
                             <a href="{{ route('users.edit', Auth::id() )}}">
-                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                                 Edit profile
                             </a>
                         </li>
@@ -59,7 +64,7 @@
                             <a href="{{ route('logout') }}"
                                 onclick="event.preventDefualt();
                                     document.getElementById('logout-form').submit();">
-                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
                                         logout
                             </a>
 

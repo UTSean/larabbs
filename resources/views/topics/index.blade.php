@@ -3,8 +3,9 @@
 @section('title', isset($category) ? $category->name : 'Topic list')
 
 @section('content')
+
 <div class="row">
-    <div class="col-md-09 col-md-09 topic_list">
+    <div class="col-md-9 col-md-9 topic_list">
 
         @if (isset($category))
         <div class="alert alert-info" role="alert">
@@ -32,8 +33,8 @@
             </div>
         </div>
 
-                <div class="col-lg-3 col-md-3 sidebar">
-                    @include('topics._sidebar')
-                </div>
+        <div class="col-lg-3 col-md-3 sidebar">
+            @include('topics._sidebar')
+        </div>
     </div>
 @endsection

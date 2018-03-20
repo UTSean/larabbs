@@ -21,6 +21,9 @@ class TopicRequest extends Request
             {
                 return [
                     // UPDATE ROLES
+                    'title' => 'required|min:2',
+                    'body'  => 'required|min:3',
+                    'category_id' => 'required|numeric',
                 ];
             }
             case 'GET':
@@ -36,6 +39,8 @@ class TopicRequest extends Request
     {
         return [
             // Validation messages
+            'title.min' => 'Title must be more than one character.',
+            'body.min'  => 'Content must be more than 3 characters',
         ];
     }
 }
