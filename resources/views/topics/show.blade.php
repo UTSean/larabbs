@@ -61,6 +61,30 @@
                 @endcan
             </div>
         </div>
+        {{-- Reply list --}}
+        <div class="panel panel-default topic-reply">
+            <div class="panel-body">
+                @include('topics._reply_box', ['topic' => $topic])
+                @include('topics._reply_list', ['replies' => $topic->replies()->with('user')->get()])
+            </div>
+        </div>
+
+        {{-- Reply content --}}
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <ul class="nav nav-tabs">
+                    <li class="{{ active_class(if_query('tab', null)) }}">
+                        <a href="{{ route('users.show', $topic->user_id) }}">Her/His topics</a>
+                    </li>
+                    <li class="{{ active_class(if_query('tab', 'replies')) }}">
+                        <a href="{{ route('users.show', [$topic->user_id, 'tab' => 'replies']) }}">Her/His replies</a>
+                    </li>
+                </ul>
+                @if (if_query('tab', 'replies'))
+                    @include('users._replies', ['replies' => $user->replies()->with('topic')->recent()->paginate(5)])
+                @endif
+            </div>
+        </div>
     </div>
 </div>
 @stop

@@ -15,10 +15,10 @@
                     </div>
                     <div class="media-body">
                         <hr>
-                        <h4><strong>个人简介</strong></h4>
+                        <h4><strong>Introduction</strong></h4>
                         <p>{{ $user->introduction }}</p>
                         <hr>
-                        <h4><strong>注册于</strong></h4>
+                        <h4><strong>Sign up at</strong></h4>
                         <p>{{ $user->created_at->diffForHumans() }}</p>
                     </div>
                 </div>
@@ -39,12 +39,18 @@
         <div class="panel panel-default">
             <div class="panel-body">
                 <ul class="nav nav-tabs">
-                    <li class="active">
-                        <a href="#">Her/His topics</a>
+                    <li class="{{ active_class(if_query('tab', null)) }}">
+                        <a href="{{ route('users.show', $user->id) }}">Her/his topic</a>
                     </li>
-                    <li><a herf="#">Her/His Reply</a></li>
+                    <li class="{{ active_class(if_query('tab', 'replies')) }}">
+                        <a href="{{ route('users.show', [$user->id, 'tab' => 'replies']) }}">Her/his reply</a>
+                    </li>
                 </ul>
-                @include('users._topics', ['topics' => $user->topics()->recent()->paginate(5)])
+               @if (if_query('tab', 'replies'))
+                   @include('users._replies', ['replies' => $user->replies()->with('topic')->recent()->paginate(5)])
+               @else
+                   @include('users._topics', ['topics' => $user->topics()->recent()->paginate(5)])
+               @endif
             </div>
         </div>
     </div>
