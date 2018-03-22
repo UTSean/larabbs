@@ -10,7 +10,7 @@
 
           <div class="infos">
               <div class="media-heading">
-                  <a href="{{ route('users.show', [$reply->user_id]) }}" title="{{ $reply->user->name }}">
+                  <a href="{{ route('users.show', [$reply->user_id ̰]) }}" title="{{ $reply->user->name }}">
                       {{ $reply->user->name }}
                   </a>
                   <span> •  </span>
