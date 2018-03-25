@@ -11,7 +11,7 @@ class CategoriesController extends Controller
     //
     public function show(Category $category, Request $request, Topic $topic)
     {
-        $topics = $topic->withOder($request->order)
+        $topics = $topic->withOrder($request->order)
                         ->where('category_id', $category->id)
                         ->paginate(20);
 
