@@ -41,7 +41,7 @@ class SeedRolesAndPermissionsData extends Migration
     public function down()
     {
         //
-        qpp()['cache']->forget('spatie.permission.cache');
+        app()['cache']->forget('spatie.permission.cache');
 
         $tableNames = config('permission.table_names');
         Model::unguard();
